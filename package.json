@@ -1,0 +1,22 @@
+{
+  "name": "among_spies",
+  "version": "1.0.0",
+  "description": "an asymmetrical strategy game for those of sharpened mind and sharper tongue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manleigh/among_spies.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manleigh/among_spies/issues"
+  },
+  "homepage": "https://github.com/manleigh/among_spies#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.12"
+  }
+}
