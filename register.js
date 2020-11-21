@@ -40,6 +40,20 @@ var firebaseConfig = {
       console.log('not logged in');
     }
   })
+
+  const btnSignout = document.getElementById('signOut')
+
+  btnSignout.addEventListener('click', e =>{
+    e.preventDefault();
+    firebase.auth().signOut().then(() => {
+      console.log('user has signed out')
+    }).catch((error) =>{
+      var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+    })
+  });
   
   
   
