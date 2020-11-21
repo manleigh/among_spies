@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/manleigh/among_spies#readme",
   "dependencies": {
-    "browser-sync": "^2.26.12"
-  }
+    "browser-sync": "^2.26.12",
+    "firebase": "^8.1.1",
+    "firebaseui": "^4.7.1",
+    "node.js": "0.0.1-security"
+  },
+  "devDependencies": {}
 }
