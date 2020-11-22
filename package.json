@@ -4,7 +4,7 @@
   "description": "an asymmetrical strategy game for those of sharpened mind and sharper tongue",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node login.js"
   },
   "repository": {
     "type": "git",
