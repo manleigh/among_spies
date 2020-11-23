@@ -1,3 +1,28 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyDSiFrtvLf6M72bgEKU1Juei54GDZyB_EE",
+    authDomain: "fall2020-comp426.firebaseapp.com",
+    databaseURL: "https://fall2020-comp426.firebaseio.com",
+    projectId: "fall2020-comp426",
+    storageBucket: "fall2020-comp426.appspot.com",
+    messagingSenderId: "132509825042",
+    appId: "1:132509825042:web:77bbd19f047c37bfdcc0cb",
+    measurementId: "G-S2NMLWLDYR"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+
+  
+
+
+  
+  
+  
+  /**/
+
+  
+  
+
 //limit - number of songs played per round
 let limit = 10;
 let t0, t1;
@@ -121,9 +146,9 @@ function makeGuess() {
             totalRight++;
         }
     }
-    alert(guess.toLowerCase())
-    alert(song.track.name.toLowerCase())
-    alert(song.track.artists[0].name.toLowerCase())
+    console.log(guess.toLowerCase())
+    console.log(song.track.name.toLowerCase())
+    console.log(song.track.artists[0].name.toLowerCase())
     counter++;
     nextSong();
 }
@@ -149,8 +174,39 @@ function endGame() {
     t1 = performance.now();
     let totalTime = t1 - t0;
     let finalScore = score(totalTime)
-    alert("total right is" + totalRight)
-    alert(finalScore)
+    console.log("total right is" + totalRight)
+    console.log(finalScore)
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+        if(firebaseUser){
+          console.log(firebaseUser);
+          var docRef = db.collection("users").doc(firebaseUser.email);
+          docRef.get().then(function(doc) {
+        if (doc.exists) {
+            var score = doc.data().score;
+            if(finalScore > score){
+                db.collection("users").doc(firebaseUser.email).set({
+                    displayID: firebaseUser.displayName,
+                    score: finalScore
+                })
+                .then(function() {
+                    console.log("Document successfully written!");
+                })
+                .catch(function(error) {
+                    console.error("Error writing document: ", error);
+                });
+            }
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+        } else{
+          console.log('not logged in')
+        }
+      })
+    
 }
 
 function score(totalTime) {
