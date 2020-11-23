@@ -70,7 +70,8 @@ var firebaseConfig = {
             var score = doc.data().score
             console.log(username, score);
             // let output = `<h2>${username} ${score}</h2>`
-            $('#scores').append(`<h2 class="username">${username} ${score}</h2>`)
+            // $('#scores').append(`<h2 class="username">${username} ${score}</h2>`)
+            $('#scores').append(`<tr class="username"><td>${username}</td> <td>${score}</td></tr>`)
         });
     });
     
