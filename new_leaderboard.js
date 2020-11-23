@@ -23,6 +23,43 @@ var firebaseConfig = {
         console.error("Error writing document: ", error);
     });*/
 
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+        if(firebaseUser){
+          console.log(firebaseUser);
+          setupUI(firebaseUser);
+        } else{
+          console.log('not logged in');
+          setupUI();
+        }
+      })
+    
+    const loggedOutLinks = document.querySelectorAll('.logged-out')
+    const loggedInLinks = document.querySelectorAll('.logged-in')
+    
+    const setupUI = (user) => {
+      if (user){
+        loggedInLinks.forEach(item => item.style.display = 'block');
+        loggedOutLinks.forEach(item => item.style.display = 'none');
+      } else {
+        loggedInLinks.forEach(item => item.style.display = 'none');
+        loggedOutLinks.forEach(item => item.style.display = 'block');
+      }
+    }
+    
+    const btnSignout = document.getElementById('signOut')
+    
+      btnSignout.addEventListener('click', e =>{
+        e.preventDefault();
+        firebase.auth().signOut().then(() => {
+          console.log('user has signed out')
+        }).catch((error) =>{
+          var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+        })
+      });
+
     var docRef = db.collection("users")
     db.collection("users")
     .orderBy('score', 'desc')
@@ -38,3 +75,4 @@ var firebaseConfig = {
     });
     
 
+    
