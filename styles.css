@@ -1,7 +1,7 @@
 body {
-    background-color: #12131a;
-    font-family: "Source Sans Pro", sans-serif;
-    color: #d6d6d6;
+  background-color: #12131a;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #d6d6d6;
 }
 
 .divider {
@@ -13,7 +13,7 @@ body {
 }
 
 .title {
-    text-align: center;
+  text-align: center;
 }
 
 .middle {
@@ -21,19 +21,93 @@ body {
 }
 
 .header-container {
-    display: flex;
-    justify-content: center;
-    top: 0;
-    width: 100%;
-    margin-bottom: 10px;
-  }
+  display: flex;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}
 
 h1 {
-    color: #d6d6d6;
+  color: #d6d6d6;
 }
 
 h2 {
-    color: #d6d6d6;
+  color: #d6d6d6;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2px;
+  position: fixed; 
+  top: 0;
+  text-transform: uppercase;
+  width: 80%;
+}
+
+nav .item a {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: #d6d6d6 !important;
+}
+
+.menu {
+  display: none;
+  /* this is for responsive layout later when menu turns into hamburger */
+}
+
+
+
+
+
+body {
+  margin: 40px;
+  background: #12131a;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/* header */
+.header-container {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.width-def {
+  width: 80%;
+}
+.main-title {
+  font-size: 20px;
+  color: #d6d6d6 !important;
+}
+
+.menu {
+  display: none;
+  /* this is for responsive layout later when menu turns into hamburger */
+}
+
+.left .logo,
+.menu {
+  width: 30px;
+}
+
+.right {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.item {
+  float: left;
+  font-size: 10px;
 }
 
 nav {

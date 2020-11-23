@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/manleigh/guessify#readme",
   "dependencies": {
+    "require.js": "^1.0.0",
+    "requirejs": "^2.3.6"
     "axios": "^0.21.0",
     "browser-sync": "^2.26.12",
     "cors": "^2.8.5",
