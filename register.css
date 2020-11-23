@@ -1,12 +1,12 @@
 /* Basic template taken from https://github.com/jkatrina22 */
 
 body {
-    margin: 0;
-    overflow: hidden;
-    background-color: #3B337E;
-    font-family: "Source Sans Pro", sans-serif;
-    height: 100vh;
-    width: 100%;
+  margin: 40px;
+  background: #12131a;
+  font-family: "Source Sans Pro", sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
 }
 
 .middle {
@@ -146,15 +146,8 @@ nav {
     /* this is for responsive layout later when menu turns into hamburger */
   }
 
-
-
-  body {
-    margin: 40px;
-    background: #12131a;
-    font-family: "Source Sans Pro", sans-serif;
-  }
   
-  /* header */
+  /* HEADER */
   .header-container {
     display: flex;
     justify-content: center;
@@ -171,11 +164,6 @@ nav {
     color: #d6d6d6 !important;
   }
   
-/* this is for responsive layout later when menu turns into hamburger */
-  /* .menu {
-    display: none;
-  } */
-  
   .left .logo,
   .menu {
     width: 60px;
@@ -187,11 +175,6 @@ nav {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  }
-  
-  .item {
-    float: left;
-    font-size: 10px;
   }
   
   nav {
