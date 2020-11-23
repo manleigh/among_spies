@@ -321,6 +321,10 @@ nav {
     text-transform: capitalize;
   }
 
+  #leaderboard-title {
+    margin-left: 110px;
+  }
+
   #scores {
     border-bottom: 0.5px solid #202231;
     border-top: 1px solid #202231;
@@ -329,6 +333,7 @@ nav {
     width: 70vw;
     margin-top: 40px;
     margin-bottom: 40px;
+    margin-left: 110px;
     padding-left: 20px;
   }
 
@@ -371,6 +376,37 @@ tr:nth-child(3) {
 }
 /* Bronze */
 tr:nth-child(4) {
-  background: #905921;
+  background: #B08D57;
   color: #12131a;
+}
+
+/* GAMEPAGE */
+#genreLabel {
+  margin-top: 40px;
+  margin-left: 110px;
+  padding-top: 40px;
+  font-size: 30px;
+}
+
+#genres {
+  margin-left: 110px;
+  margin-top: 40px;
+}
+
+#root {
+  margin-left: 110px;
+  margin-top: 50px;
+}
+
+#guessButton {
+  margin-right: 20px;
+}
+
+/* #skipButton {
+
+} */
+
+#prompt {
+  width: 300px;
+  resize: none;
 }

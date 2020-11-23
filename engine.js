@@ -121,14 +121,14 @@ function playSongs() { //playSongs writes artist name, track name to respective 
             document.getElementById("albumCover").setAttribute("src", "https://via.placeholder.com/300/0C/O%20https://placeholder.com/")
         }
         document.getElementById("artist").innerHTML = `Artist: ${song.track.artists[0].name}`;
-        document.getElementById("songName").innerHTML = (`<textarea id="prompt" rows="1" autofocus="autofocus" placeholder="What song is this?"></textarea>`)
+        document.getElementById("songName").innerHTML = (`<textarea id="prompt" rows="2" cols="200" autofocus="autofocus" placeholder="What song is this?"></textarea>`)
     } else {
         if(imgSrc !== undefined) {
             document.getElementById("albumCover").setAttribute("src", `${imgSrc.url}`)
         } else {
             document.getElementById("albumCover").setAttribute("src", "https://via.placeholder.com/300/0C/O%20https://placeholder.com/")
         }
-        document.getElementById("artist").innerHTML =`<textarea id="prompt" rows="1" autofocus="autofocus" placeholder="Who sings this?"></textarea>`;
+        document.getElementById("artist").innerHTML =`<textarea id="prompt" rows="2" cols="200" autofocus="autofocus" placeholder="Who sings this?"></textarea>`;
         document.getElementById("songName").innerHTML = `Song Name: ${song.track.name}`;
         artist = true;
     }

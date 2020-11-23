@@ -4,7 +4,7 @@
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Among Spies GamePage</title>
+        <title>Play Guessify</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap"
         rel="stylesheet">
@@ -18,7 +18,40 @@
         <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
     </head>
     <body>
-        
+        <div class="header-container">
+            <div class="width-def header">
+              <nav>
+                <div class="left">
+                  <div>
+                    <img class="menu" src="img/hamburger.svg" alt="hamburger" />
+                  </div>
+                  <div>
+                    <a href="index.html"><img class="logo" src="https://i.imgur.com/s2Bc7cI.png" alt="Guessify Logo" /></a>
+                  </div>
+                </div>
+                <div class="middle">
+                  <h1>Guessify</h1>
+                </div>
+                <div class="right">
+                  <div class="item">
+                    <p><a href="index.html">Home</a></p>
+                  </div>
+                  <div class="item logged-out">
+                    <p><a href="register.html">Register</a></p>
+                  </div>
+                  <div class="item logged-out">
+                    <p><a href="login.html">Login</a></p>
+                  </div>
+                  <div class="item">
+                    <p><a href="leaderboard.html">Leaderboard</a></p>
+                  </div>
+                  <div class="item logged-in" style="display:none">
+                    <p><a href="#" id="signOut">Sign Out</a></p>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
         <label for="genres" id = "genreLabel">Select a Genre:  </label>
         <select name="genreSelection" id="genres">
             <!-- <option value="volvo">Volvo</option>
