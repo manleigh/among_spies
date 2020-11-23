@@ -213,4 +213,17 @@ nav {
     margin-top: 50px;
   }
   
+  h3 {
+    font-size: 25px;
+  }
   
+  .main-image img {
+    width: 400px;
+    right: 0;
+  }
+
+  .page {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
