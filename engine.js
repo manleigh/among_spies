@@ -72,8 +72,10 @@ function selectGenre() {
     document.getElementById("submitButton").remove();
 
     let startButton = `<button id="startButton" onclick="startRound()">Start Round</button>`
+    let albumCover = ` <img id = "albumCover" src="" alt=""> `
     let artist = `<p id = "artist">Artist: </p>`
     let songName = `<p id = "songName">Song Name: </p>`
+    $('#root').append(albumCover)
     $('#root').append(artist)
     $('#root').append(songName)
     $('#root').append(startButton)
@@ -84,12 +86,24 @@ let counter = 0;
 function playSongs() { //playSongs writes artist name, track name to respective HTML elements and plays song
     let artOrSong = Math.random()
     let song = selectedSongs[counter]
+    console.log(song)
     let artist = false;
+    let imgSrc = song.track.album.images.find(img => img.height === 300)
     if (artOrSong < 0.5) {
+        if(imgSrc !== undefined) {
+            document.getElementById("albumCover").setAttribute("src", `${imgSrc.url}`)
+        } else {
+            alert(imgSrc)
+        }
         document.getElementById("artist").innerHTML = `Artist: ${song.track.artists[0].name}`;
-        document.getElementById("songName").innerHTML = (`<textarea id="prompt" rows="1" autofocus="autofocus">What song is this?</textarea>`)
+        document.getElementById("songName").innerHTML = (`<textarea id="prompt" rows="1" autofocus="autofocus" placeholder="What song is this?"></textarea>`)
     } else {
-        document.getElementById("artist").innerHTML =`<textarea id="prompt" rows="1" autofocus="autofocus">Who sings this?</textarea>`;
+        if(imgSrc !== undefined) {
+            document.getElementById("albumCover").setAttribute("src", `${imgSrc.url}`)
+        } else {
+            alert(imgSrc)
+        }
+        document.getElementById("artist").innerHTML =`<textarea id="prompt" rows="1" autofocus="autofocus" placeholder="Who sings this?"></textarea>`;
         document.getElementById("songName").innerHTML = `Song Name: ${song.track.name}`;
         artist = true;
     }
@@ -99,6 +113,9 @@ function playSongs() { //playSongs writes artist name, track name to respective 
     x.setAttribute("id", "currentSong")
     x.load() //load element
     x.play() //play the audio element
+    if(x.duration >= 30000) {
+        skip()
+    }
     document.body.appendChild(x);
     document.getElementById("guessButton").setAttribute("type", `${artist}`)
 }
@@ -121,9 +138,9 @@ function makeGuess() {
             totalRight++;
         }
     }
-    alert(guess.toLowerCase())
-    alert(song.track.name.toLowerCase())
-    alert(song.track.artists[0].name.toLowerCase())
+    console.log(guess.toLowerCase())
+    console.log(song.track.name.toLowerCase())
+    console.log(song.track.artists[0].name.toLowerCase())
     counter++;
     nextSong();
 }
@@ -149,8 +166,14 @@ function endGame() {
     t1 = performance.now();
     let totalTime = t1 - t0;
     let finalScore = score(totalTime)
-    alert("total right is" + totalRight)
-    alert(finalScore)
+    console.log("total right is" + totalRight)
+    console.log(finalScore)
+    document.getElementById("albumCover").remove();
+    document.getElementById("artist").remove();
+    document.getElementById("songName").remove();
+    document.getElementById("skipButton").remove();
+    document.getElementById("guessButton").remove();
+
 }
 
 function score(totalTime) {
