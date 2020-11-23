@@ -4,8 +4,20 @@ body {
     color: #d6d6d6;
 }
 
+.divider {
+  border-bottom: 1px solid #d6d6d6;
+  width: 80%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 120px;
+}
+
 .title {
     text-align: center;
+}
+
+.middle {
+  text-transform: capitalize !important;
 }
 
 .header-container {
@@ -114,7 +126,6 @@ nav {
   }
 
   .list {
-    margin-top: 50px;
     margin-left: -27px;
   }
   
@@ -226,4 +237,20 @@ nav {
     margin: auto;
     width: 50%;
     padding: 10px;
+  }
+
+  .username {
+    text-transform: capitalize;
+  }
+
+  #scores {
+    border-bottom: 1px solid #d6d6d6;
+    border-top: 1px solid #d6d6d6;
+    border-right: 1px solid #d6d6d6;
+    border-left: 1px solid #d6d6d6;
+    width: 70vw;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 60px;
+    padding-left: 20px;
   }

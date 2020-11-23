@@ -7,6 +7,10 @@ body {
     width: 100%;
 }
 
+.middle {
+  text-transform: capitalize !important;
+}
+
 .background {
     width: 800px;
     height: 100%;
@@ -173,7 +177,7 @@ nav {
   .left .logo,
   .menu {
     width: 60px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   
   .right {
