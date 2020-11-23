@@ -1,3 +1,28 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyDSiFrtvLf6M72bgEKU1Juei54GDZyB_EE",
+    authDomain: "fall2020-comp426.firebaseapp.com",
+    databaseURL: "https://fall2020-comp426.firebaseio.com",
+    projectId: "fall2020-comp426",
+    storageBucket: "fall2020-comp426.appspot.com",
+    messagingSenderId: "132509825042",
+    appId: "1:132509825042:web:77bbd19f047c37bfdcc0cb",
+    measurementId: "G-S2NMLWLDYR"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+
+  
+
+
+  
+  
+  
+  /**/
+
+  
+  
+
 //limit - number of songs played per round
 let limit = 10;
 let t0, t1;
@@ -168,6 +193,37 @@ function endGame() {
     let finalScore = score(totalTime)
     console.log("total right is" + totalRight)
     console.log(finalScore)
+    firebase.auth().onAuthStateChanged(firebaseUser =>{
+        if(firebaseUser){
+          console.log(firebaseUser);
+          var docRef = db.collection("users").doc(firebaseUser.email);
+          docRef.get().then(function(doc) {
+        if (doc.exists) {
+            var score = doc.data().score;
+            if(finalScore > score){
+                db.collection("users").doc(firebaseUser.email).set({
+                    displayID: firebaseUser.displayName,
+                    score: finalScore
+                })
+                .then(function() {
+                    console.log("Document successfully written!");
+                })
+                .catch(function(error) {
+                    console.error("Error writing document: ", error);
+                });
+            }
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+        } else{
+          console.log('not logged in')
+        }
+      })
+    
     document.getElementById("albumCover").remove();
     document.getElementById("artist").remove();
     document.getElementById("songName").remove();
