@@ -10,14 +10,24 @@
         rel="stylesheet">
     </head>
     <body>
-        <!-- <div id = "root"></div> -->
-        <p id = "artist">Artist: </p>
+        <label for="genres" id = "genreLabel">Select a Genre:  </label>
+        <select name="genreSelection" id="genres">
+            <!-- <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option> -->
+        </select>
 
+        <div id = "root"></div>
+        <!-- <p id = "artist">Artist: </p>
 
-        <p id = "songName">Song Name: </p>
-        <button id="button" onclick="startRound()">Start Round</button>
+        <p id = "songName">Song Name: </p> -->
 
         <script src="engine.js"></script>
+        <!-- <script src="node_modules/requirejs/require.js"></script> -->
+
+        <script src="node_modules/jquery/dist/jquery.js"></script>
         <script src="node_modules/axios/dist/axios.min.js"></script>
+        
     </body>
 </html>
