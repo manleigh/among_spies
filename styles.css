@@ -72,7 +72,7 @@ nav {
     width: 80%;
   }
   .main-title {
-    font-size: 20px;
+    font-size: 30px;
     color: #d6d6d6 !important;
   }
   
@@ -83,7 +83,7 @@ nav {
   
   .left .logo,
   .menu {
-    width: 30px;
+    width: 60px;
   }
   
   .right {
@@ -95,7 +95,27 @@ nav {
   
   .item {
     float: left;
-    font-size: 10px;
+    font-size: 14px;
+  }
+
+  .instructions {
+    width: 80%;
+    margin-left: 120px;
+    margin-top: 30px;
+  }
+
+  .instructions p {
+    font-size: 13.5px;
+  }
+
+  .instructions li {
+    font-size: 13.5px;
+    margin-top: 10px;
+  }
+
+  .list {
+    margin-top: 50px;
+    margin-left: -27px;
   }
   
   nav {
@@ -103,7 +123,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-top: 2px;
+    padding-top: 10px;
     position: fixed; 
     top: 0;
     text-transform: uppercase;
@@ -119,11 +139,11 @@ nav {
   }
   
   .main-description {
-    font-size: 13px;
+    font-size: 13.5px;
   }
   
   .main-description {
-    width: 450px;
+    width: 100%;
     color: #c5c5c5;
   }
   

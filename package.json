@@ -1,5 +1,5 @@
 {
-  "name": "among_spies",
+  "name": "guessify",
   "version": "1.0.0",
   "description": "an asymmetrical strategy game for those of sharpened mind and sharper tongue",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manleigh/among_spies.git"
+    "url": "git+https://github.com/manleigh/guessify.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/manleigh/among_spies/issues"
+    "url": "https://github.com/manleigh/guessify/issues"
   },
-  "homepage": "https://github.com/manleigh/among_spies#readme",
+  "homepage": "https://github.com/manleigh/guessify#readme",
   "dependencies": {
     "axios": "^0.21.0",
     "browser-sync": "^2.26.12",

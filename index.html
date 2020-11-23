@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>  
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Among Spies</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap"
-        rel="stylesheet">
 
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Among Spies</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
 
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
-      
-        <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-    </head>
-    <body>
-        <div class="header-container">
-            <div class="width-def header">
-              <nav>
-                  <!-- <div class="left">
-                      <div>
-                          <img class="menu" src="img/hamburger.svg" alt="hamburger"/>
-                        </div>
-                      <div>
-                        <a href="https://jkatrina22.github.io/"><img class="logo" src="img/logo.svg" alt="logo"/></a>
-                      </div>
-                      
-                    </div> -->
-               <div class="right">
-                  <div class="item">
-                      <p><a href="#">Home</a></p>
-                    </div>
-                    <div class="item">
-                      <p><a href="#about">About</a></p>
-                    </div>
-                    <div class="item">
-                      <p><a href="register.html">Register</a></p>
-                    </div>
-                    <div class="item">
-                      <p><a href="login.html">Login</a></p>
-                    </div>
-               </div>
-              </nav>
-              <div>
-                <h1 class="main-title" style="text-align:left;width:auto;">
-                  whatever that latin fill stuff is lorem epson 
-                </h1>
-                <p class="main-description">
-                    main description
-                </p>
-                <div class="get-started">
-                  <div class="get-started-input">
-                    <!-- <img src="img/email.svg" alt="email"/> -->
-                    <input type="text" placeholder="you@example.com" />
-                    <button class="get-started-button" href="register.html">Get Started</button>
-                  </div>
-                  <div>
-                    <button class="login" href="login.html">Login</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+</head>
+
+<body>
+  <div class="header-container">
+    <div class="width-def header">
+      <nav>
+        <div class="left">
+          <div>
+            <img class="menu" src="img/hamburger.svg" alt="hamburger" />
           </div>
-
-          
-    </body>
+          <div>
+            <a href="https://jkatrina22.github.io/"><img class="logo"
+              src="https://i.imgur.com/s2Bc7cI.png"
+              alt="Spotify Logo" /></a>
+          </div>
+        </div>
+        <div class="right">
+          <div class="item">
+            <p><a href="#">Home</a></p>
+          </div>
+          <div class="item">
+            <p><a href="#about">About</a></p>
+          </div>
+          <div class="item">
+            <p><a href="register.html">Register</a></p>
+          </div>
+          <div class="item">
+            <p><a href="login.html">Login</a></p>
+          </div>
+        </div>
+      </nav>
+      <div>
+        <h1 class="main-title" style="text-align:left;width:auto;">
+          Welcome to
+        </h1>
+        <img src="https://i.imgur.com/GRq9NAR.png" width="50%"></img>
+        <h2 class="main-description">
+          A game where you test your musical memory in rapid fire rounds!
+        </h2>
+        <div class="get-started">
+          <div class="get-started-input">
+            <!-- <img src="img/email.svg" alt="email"/> -->
+            <input type="text" placeholder="you@example.com" />
+            <button class="get-started-button" href="register.html">Get Started</button>
+          </div>
+          <div>
+            <button class="login" href="login.html">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="instructions">
+    <h3>Instructions</h3>
+    <p>After signing up and logging in, you'll be directed to a ___ page where you can ___! </p>
+    <p>One round is 10 songs! </p>
+    <div class="list">
+      <ol>
+        <li>Choose a genre of music</li>
+        <li>A brief song clip will play, and you have to either guess the artist or the song title as fast as you can.</li>
+        <p> Just fill in the textbox with your guess and click guess: the quicker you finish, the higher your score!</p>
+      </ol>
+    </div>
+  </div>
+</body>
 </html>
