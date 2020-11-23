@@ -6,24 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="register.css" rel="stylesheet">
     <title>Create an Account</title>
-</head>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+
+   
+</head>
 <body>
     <div class="header-container">
         <div class="width-def header">
           <nav>
+            <div class="left">
+                <div>
+                  <a href="index.html"><img class="logo"
+                    src="https://i.imgur.com/s2Bc7cI.png"
+                    alt="Spotify Logo" /></a>
+                </div>
+            </div>
+            <div class="middle">
+                <h1>Guessify</h1>
+            </div>
            <div class="right">
               <div class="item">
                   <p><a href="index.html">Home</a></p>
                 </div>
-                <div class="item">
-                  <p><a href="#about">About</a></p>
-                </div>
-                <div class="item">
+                <div class="item logged-out"style="display:none"> 
                   <p><a href="register.html">Register</a></p>
                 </div>
-                <div class="item">
+                <div class="item logged-out" style="display:none">
                   <p><a href="login.html">Login</a></p>
+                </div>
+                <div class="item">
+                    <p><a href="leaderboard.html">Leaderboard</a></p>
+                  </div>
+                <div class="item logged-in" style="display:none">
+                    <p><a href="#" id="signOut">Sign Out</a></p>
                 </div>
            </div>
           </nav>
@@ -36,16 +58,16 @@
                 </div>
                 <form>
                     <div class="register">
-                        <p>Username</p>
+                        <p>Email</p>
                         <div>
-                            <input class="username" type="text">
+                            <input id="username" type="text">
                         </div>
                         <p>Password</p>
                         <div>
-                            <input class="password" type="password">
+                            <input id="password" type="password">
                         </div>
-                        <div class="#">
-                            <button>Login</button>
+                        <div>
+                            <button type='button' id="btnLogin"> Login</button>
                         </div>
                     </div>
                 </form>
@@ -53,6 +75,12 @@
         </div>
     </div>
 
+    
+
+    
+
+    
+    <script src="login.js"></script>
 
 </body>
 

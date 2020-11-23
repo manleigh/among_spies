@@ -4,6 +4,11 @@ body {
     background-color: #3B337E;
     font-family: "Source Sans Pro", sans-serif;
     height: 100vh;
+    width: 100%;
+}
+
+.middle {
+  text-transform: capitalize !important;
 }
 
 .background {
@@ -13,13 +18,6 @@ body {
     left: 0;
     z-index: -2;
     margin-left: -150px;
-}
-
-.logo {
-    position: absolute;
-    left: 0;
-    width: 30px;
-    padding: 40px 50px;
 }
 
 .card {
@@ -148,8 +146,6 @@ nav {
 
 
 
-
-
   body {
     margin: 40px;
     background: #12131a;
@@ -173,14 +169,15 @@ nav {
     color: #d6d6d6 !important;
   }
   
-  .menu {
+/* this is for responsive layout later when menu turns into hamburger */
+  /* .menu {
     display: none;
-    /* this is for responsive layout later when menu turns into hamburger */
-  }
+  } */
   
   .left .logo,
   .menu {
-    width: 30px;
+    width: 60px;
+    margin-top: 10px;
   }
   
   .right {
@@ -214,3 +211,11 @@ nav {
     text-decoration: none;
     color: #d6d6d6 !important;
   }
+
+  .item {
+    float: left;
+    font-size: 13.5px;
+  }
+
+  
+  
