@@ -322,13 +322,39 @@ nav {
   }
 
   #scores {
-    border-bottom: 1px solid #d6d6d6;
-    border-top: 1px solid #d6d6d6;
-    border-right: 1px solid #d6d6d6;
-    border-left: 1px solid #d6d6d6;
+    border-bottom: 0.5px solid #202231;
+    border-top: 1px solid #202231;
+    border-right: 1px solid #202231;
+    border-left: 1px solid #202231;
     width: 70vw;
     margin-top: 40px;
     margin-bottom: 40px;
-    margin-left: 60px;
     padding-left: 20px;
+  }
+
+  .card-content {
+    background-color: #202231;
+  }
+
+  table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  th {
+    font-size: 30px;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: #202231;
+  }
+
+  td {
+    font-size: 20px;
+    margin-top: 50px;
+    padding: 10px;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #12131a;
   }
