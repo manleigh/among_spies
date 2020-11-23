@@ -77,7 +77,11 @@ async function appendGenres() {
     //genres.forEach(genre => console.log(JSON.stringify(genre.id, null, 4)))
     //let option = `<option value=${genres[0].id}>${genres[0].name}</option>`
     //document.getElementById('genres').appendChild(option);
+    let genreSelection = `<label for="genres" id = "genreLabel">Select a Genre:  </label>
+    <select name="genreSelection" id="genres">
 
+    </select>`
+    $('#first').append(genreSelection)
     genres.forEach(genre => {
         $('#genres').append(`<option value=${genre.id}>${genre.name}</option>`)
     });
@@ -191,9 +195,10 @@ function nextSong() {
 function endGame() {
     t1 = performance.now();
     let totalTime = t1 - t0;
-    let finalScore = score(totalTime)
-    console.log("total right is" + totalRight)
-    console.log(finalScore)
+    console.log(totalTime)
+    let finalScore = calcScore(totalTime)
+    finalScore = Math.ceil(finalScore * 100) / 100;
+
     firebase.auth().onAuthStateChanged(firebaseUser =>{
         if(firebaseUser){
           console.log(firebaseUser);
@@ -231,10 +236,35 @@ function endGame() {
     document.getElementById("skipButton").remove();
     document.getElementById("guessButton").remove();
 
+    let endScreen = `
+    <p id = "finalScore">Total Score: ${finalScore} </p>
+    <button id="replayButton" onclick="playAgain()">Play Again? </button>
+    <button id="stopPlayingButton" onclick="stopPlaying()">Done Playing? </button>
+    `
+    $('#root').append(endScreen)
 }
 
-function score(totalTime) {
-    let totalScore = totalRight + 200000/totalTime
+function stopPlaying() {
+    document.getElementById("finalScore").remove();
+    document.getElementById("replayButton").remove();
+    document.getElementById("stopPlayingButton").remove();
+    let goodByeScreen = `
+    <p>Thank you for playing!</p>
+    `
+    $('#root').append(goodByeScreen)
+
+}
+
+function playAgain() {
+    document.getElementById("finalScore").remove();
+    document.getElementById("replayButton").remove();
+    document.getElementById("stopPlayingButton").remove();
+    totalRight = 0
+    counter = 0
+    appendGenres()
+}
+function calcScore(totalTime) {
+    let totalScore = totalRight + 30000/totalTime
     return totalScore;
 }
 
