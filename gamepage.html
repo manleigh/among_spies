@@ -1,76 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>  
-        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Play Guessify</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap"
-        rel="stylesheet">
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Guessify</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
-        <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
-    </head>
-    <body>
-        <div class="header-container">
-            <div class="width-def header">
-              <nav>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <div class="header-container">
+        <div class="width-def header">
+            <nav>
                 <div class="left">
-                  <div>
-                    <img class="menu" src="img/hamburger.svg" alt="hamburger" />
-                  </div>
-                  <div>
-                    <a href="index.html"><img class="logo" src="https://i.imgur.com/s2Bc7cI.png" alt="Guessify Logo" /></a>
-                  </div>
+                    <div>
+                        <img class="menu" src="img/hamburger.svg" alt="hamburger" />
+                    </div>
+                    <div>
+                        <a href="index.html"><img class="logo" src="https://i.imgur.com/s2Bc7cI.png"
+                                alt="Guessify Logo" /></a>
+                    </div>
                 </div>
                 <div class="middle">
-                  <h1>Guessify</h1>
+                    <h1>Guessify</h1>
                 </div>
                 <div class="right">
-                  <div class="item">
-                    <p><a href="index.html">Home</a></p>
-                  </div>
-                  <div class="item logged-out">
-                    <p><a href="register.html">Register</a></p>
-                  </div>
-                  <div class="item logged-out">
-                    <p><a href="login.html">Login</a></p>
-                  </div>
-                  <div class="item">
-                    <p><a href="leaderboard.html">Leaderboard</a></p>
-                  </div>
-                  <div class="item logged-in" style="display:none">
-                    <p><a href="#" id="signOut">Sign Out</a></p>
-                  </div>
+                    <div class="item">
+                        <p><a href="index.html">Home</a></p>
+                    </div>
+                    <div class="item logged-out">
+                        <p><a href="register.html">Register</a></p>
+                    </div>
+                    <div class="item logged-out">
+                        <p><a href="login.html">Login</a></p>
+                    </div>
+                    <div class="item">
+                        <p><a href="leaderboard.html">Leaderboard</a></p>
+                    </div>
+                    <div class="item logged-in" style="display:none">
+                        <p><a href="#" id="signOut">Sign Out</a></p>
+                    </div>
                 </div>
-              </nav>
-            </div>
-          </div>
-        <label for="genres" id = "genreLabel">Select a Genre:  </label>
-        <select name="genreSelection" id="genres">
-            <!-- <option value="volvo">Volvo</option>
+            </nav>
+        </div>
+    </div>
+    <div class="content">
+        <div class="first">
+            <label for="genres" id="genreLabel">Select a Genre: </label>
+            <select name="genreSelection" id="genres">
+                <!-- <option value="volvo">Volvo</option>
             <option value="saab">Saab</option>
             <option value="mercedes">Mercedes</option>
             <option value="audi">Audi</option> -->
-        </select>
+            </select>
+        </div>
 
-        <div id = "root"></div>
-        <!-- <p id = "artist">Artist: </p>
+        <div id="root"></div>
+    </div>
+    <!-- <p id = "artist">Artist: </p>
 
         <p id = "songName">Song Name: </p> -->
 
-        <script src="engine.js"></script>
-        <!-- <script src="node_modules/requirejs/require.js"></script> -->
+    <script src="engine.js"></script>
+    <!-- <script src="node_modules/requirejs/require.js"></script> -->
 
-        <script src="node_modules/jquery/dist/jquery.js"></script>
-        <script src="node_modules/axios/dist/axios.min.js"></script>
-      
-        
-    </body>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+
+
+</body>
+
 </html>

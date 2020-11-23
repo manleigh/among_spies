@@ -122,6 +122,7 @@ function playSongs() { //playSongs writes artist name, track name to respective 
         }
         document.getElementById("artist").innerHTML = `Artist: ${song.track.artists[0].name}`;
         document.getElementById("songName").innerHTML = (`<textarea id="prompt" rows="2" cols="200" autofocus="autofocus" placeholder="What song is this?"></textarea>`)
+
     } else {
         if(imgSrc !== undefined) {
             document.getElementById("albumCover").setAttribute("src", `${imgSrc.url}`)

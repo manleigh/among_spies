@@ -386,16 +386,20 @@ tr:nth-child(4) {
   margin-left: 110px;
   padding-top: 40px;
   font-size: 30px;
+  text-align: center;
 }
 
 #genres {
-  margin-left: 110px;
+  margin-left: 20px;
   margin-top: 40px;
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-#root {
-  margin-left: 110px;
-  margin-top: 50px;
+#submitButton {
+  
 }
 
 #guessButton {
@@ -409,4 +413,31 @@ tr:nth-child(4) {
 #prompt {
   width: 300px;
   resize: none;
+}
+
+.content {
+  width: 80%;
+  text-align: center;
+  padding-top: 20vh;
+}
+
+.first {
+  width: 80%;
+  height: 80%;
+  text-align: center;
+  /* padding-top: 5vh; */
+  margin: auto;
+}
+
+#root {
+  margin-left: 110px;
+  /* padding-top: -300px; */
+}
+
+#artist {
+  font-size: 20px;
+}
+
+#songName {
+  font-size: 20px;
 }
