@@ -195,10 +195,9 @@ function nextSong() {
 function endGame() {
     t1 = performance.now();
     let totalTime = t1 - t0;
-    console.log(totalTime)
-    let finalScore = calcScore(totalTime)
-    finalScore = Math.ceil(finalScore * 100) / 100;
-
+    let finalScore = score(totalTime)
+    console.log("total right is" + totalRight)
+    console.log(finalScore)
     firebase.auth().onAuthStateChanged(firebaseUser =>{
         if(firebaseUser){
           console.log(firebaseUser);
@@ -218,9 +217,19 @@ function endGame() {
                     console.error("Error writing document: ", error);
                 });
             }
+            console.log("score updated")
         } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
+            db.collection("users").doc(firebaseUser.email).set({
+                displayID: firebaseUser.displayName,
+                score: finalScore
+            })
+            .then(function() {
+                console.log("Document successfully written!");
+            })
+            .catch(function(error) {
+                console.error("Error writing document: ", error);
+            });
+            console.log("Document created");
         }
         }).catch(function(error) {
             console.log("Error getting document:", error);
@@ -263,8 +272,9 @@ function playAgain() {
     counter = 0
     appendGenres()
 }
-function calcScore(totalTime) {
-    let totalScore = totalRight + 30000/totalTime
+
+function score(totalTime) {
+    let totalScore = totalRight + 200000/totalTime
     return totalScore;
 }
 

@@ -31,13 +31,16 @@ var firebaseConfig = {
       result.user.updateProfile({
         displayName: displayname
       })
+      $("#notify").append('<p>Successfully Registered! You are now logged in.')
       console.log('display name added')
     })
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(errorCode);
-      console.log(errorMessage)
+      //console.log(errorMessage)
+      $("#notify").html("<p>Invalid Sign-Up</p>")
+    
     })
 
 
@@ -65,6 +68,7 @@ var firebaseConfig = {
         var errorMessage = error.message;
         console.log(errorCode);
         console.log(errorMessage);
+        
     })
   });
 

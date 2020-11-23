@@ -22,11 +22,16 @@ btnLogin.addEventListener('click', e => {
   const pass = txtPassword.value;
   
   const promise = firebase.auth().signInWithEmailAndPassword(email, pass)
-  promise.catch((error) => {
+  promise
+  .then(() =>{
+    $("#notify").html('<p>You are now logged in.</p>')
+  })
+  .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorCode);
     console.log(errorMessage)
+    $("#notify").html('<p>Invalid login.</p>')
   })
 
 });
