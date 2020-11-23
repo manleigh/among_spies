@@ -12,22 +12,27 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   var db = firebase.firestore();
 
-  /*db.collection("users").add({
-    displayID: "test4",
-    score: 2
+    /*db.collection("users").doc("test2@email.com").set({
+        displayID:"test2",
+        score: 10
     })
-    .then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
+    .then(function() {
+        console.log("Document successfully written!");
     })
     .catch(function(error) {
-        console.error("Error adding document: ", error);
+        console.error("Error writing document: ", error);
     });*/
 
     var docRef = db.collection("users")
-    db.collection("users").get().then(function(querySnapshot) {
+    db.collection("users")
+    .orderBy('score', 'desc')
+    .get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
+            var username = doc.data().displayID
+            var score = doc.data().score
+            console.log(username, score);
+            $('#scores').append(`<h1>${username} ${score}</h1>`)
         });
     });
     
