@@ -1,14 +1,14 @@
 # guessify
 The musical guessing game
 
-Users can signup for an account and login to play and track their scores to compete on a global leaderboard. Firebase is used to store usernames, contact emails, passwords, and scores.
+Users can signup for an account and login to play and track their scores to compete on a global leaderboard. Firebase is used to store usernames, contact emails, passwords, and scores with additional measures to ensure unique usernames. 
 Firebase documentation [here](https://firebase.google.com/docs/)
 
 Home page gives instructions on the game and how to sign up.
 
 Register page allows account creation, while preventing duplicate accounts.
 
-Login page lets users with existing accounts to login.
+Login page lets users with existing accounts to login. After logging in, the nav bar will update to provide a sign out feature.
 
 Leaderboard page lets users see the top global scores as well as search for users and their respective top scores using an autofill feature.
 
