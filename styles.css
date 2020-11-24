@@ -180,9 +180,22 @@ tr:nth-child(4) {
   margin-bottom: 20px;
 }
 
-/* #submitButton {
-  
-} */
+#submitButton {
+  height: 85px;
+  width: 160px;
+  /* left: -10px; */
+  border-radius: 1.5em;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#buttonimg {
+  height: 85px;
+  width: 165px;
+  /* left: -10px; */
+  border-radius: 0.25em;
+  margin-top: 5px;
+}
 
 #guessButton {
   margin-right: 20px;

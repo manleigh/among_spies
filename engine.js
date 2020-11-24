@@ -85,7 +85,7 @@ async function appendGenres() {
     genres.forEach(genre => {
         $('#genres').append(`<option value=${genre.id}>${genre.name}</option>`)
     });
-    let submitButton = `<button id="submitButton" onclick="selectGenre()">Submit</button>`
+    let submitButton = `<button id="submitButton" onclick="selectGenre()"><img id="buttonimg" src="https://i.imgur.com/metdLIo.png"></button>`
     $('#root').append(submitButton)
     //console.log("total time is" + (t1 - t0))
     // let startButton = `<button id="button" onclick="startRound()">Start Round</button>`
