@@ -278,7 +278,7 @@ function playAgain() {
 }
 
 function calcScore(totalTime) {
-    let totalScore = 2*totalRight + 10000/totalTime
+    let totalScore = 3.5*totalRight + 10000/totalTime
     return totalScore;
 }
 
