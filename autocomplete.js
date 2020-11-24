@@ -109,7 +109,8 @@ function autocomplete(inp, arr) {
     e.preventDefault();  
     const txtSearch = document.getElementById('myInput')
     //console.log(txtSearch.value)
-    db.collection("users").where("displayID", "==", txtSearch.value)
+    db.collection("users")
+    .where("displayID", "==", txtSearch.value)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -119,6 +120,12 @@ function autocomplete(inp, arr) {
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
-  })
+
+
+
+  });
+
+  
+  
 
   

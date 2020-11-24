@@ -11,6 +11,7 @@ var firebaseConfig = {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
   
   const txtUsername = document.getElementById('username')
   const txtEmail = document.getElementById('email')
@@ -24,24 +25,46 @@ var firebaseConfig = {
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const displayname = txtUsername.value;
-    
-    const promise = firebase.auth().createUserWithEmailAndPassword(email, pass)
-    promise
-    .then(function(result){
-      result.user.updateProfile({
-        displayName: displayname
+   
+    if(displayname){
+      db.collection("users").where("displayID", "==", displayname)
+      .get()
+      .then(function(querySnapshot) {
+          var check = []
+          querySnapshot.forEach(function(doc) {
+            check.push(doc.data().displayID)
+          });
+          if(check.length === 1){
+            $("#notify").html('<p>Username is taken. Try a different one.</p>')
+          } else{
+            const promise = firebase.auth().createUserWithEmailAndPassword(email, pass)
+            promise
+            .then(function(result){
+              result.user.updateProfile({
+                displayName: displayname
+              })
+              db.collection("users").doc(email).set({
+                displayID: displayname,
+                score: 0
+            })
+
+              $("#notify").html('<p>Successfully Registered! You are now logged in.</p>')
+              
+            })
+            .catch(() => {
+
+              $("#notify").html("<p>Invalid Sign-Up</p>")
+      
       })
-      $("#notify").append('<p>Successfully Registered! You are now logged in.')
-      console.log('display name added')
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode);
-      //console.log(errorMessage)
-      $("#notify").html("<p>Invalid Sign-Up</p>")
-    
-    })
+          }
+          
+      });
+      
+      } else if(displayname == false){
+        $("#notify").html("<p>Username cannot be empty</p>")
+      }
+
+  
 
 
   
@@ -49,10 +72,9 @@ var firebaseConfig = {
   
   firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
-      console.log(firebaseUser);
       setupUI(firebaseUser)
     } else{
-      console.log('not logged in');
+      
       setupUI()
     }
   })
@@ -62,13 +84,7 @@ var firebaseConfig = {
   btnSignout.addEventListener('click', e =>{
     e.preventDefault();
     firebase.auth().signOut().then(() => {
-      console.log('user has signed out')
-    }).catch((error) =>{
-      var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        
+      //console.log('user has signed out')
     })
   });
 
