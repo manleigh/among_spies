@@ -49,6 +49,7 @@ var firebaseConfig = {
             })
 
               $("#notify").html('<p>Successfully Registered! You are now logged in.</p>')
+              window.location.href = "gamepage.html"
               
             })
             .catch(() => {
@@ -84,7 +85,7 @@ var firebaseConfig = {
   btnSignout.addEventListener('click', e =>{
     e.preventDefault();
     firebase.auth().signOut().then(() => {
-      //console.log('user has signed out')
+      window.location.href = "index.html"
     })
   });
 

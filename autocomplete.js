@@ -118,7 +118,7 @@ function autocomplete(inp, arr) {
         });
     })
     .catch(function(error) {
-        console.log("Error getting documents: ", error);
+        //console.log("Error getting documents: ", error);
     });
 
 

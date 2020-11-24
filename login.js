@@ -25,12 +25,12 @@ btnLogin.addEventListener('click', e => {
   promise
   .then(() =>{
     $("#notify").html('<p>You are now logged in.</p>')
+    window.location.href = "gamepage.html"
+    
+    //window.location.href = "gamepage.html"
   })
   .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.log(errorCode);
-    console.log(errorMessage)
+  
     $("#notify").html('<p>Invalid login.</p>')
   })
 
@@ -38,10 +38,9 @@ btnLogin.addEventListener('click', e => {
 
 firebase.auth().onAuthStateChanged(firebaseUser =>{
   if(firebaseUser){
-    console.log(firebaseUser);
+    
     setupUI(firebaseUser);
   } else{
-    console.log('not logged in');
     setupUI();
   }
 })
@@ -64,12 +63,7 @@ const btnSignout = document.getElementById('signOut')
   btnSignout.addEventListener('click', e =>{
     e.preventDefault();
     firebase.auth().signOut().then(() => {
-      console.log('user has signed out')
-    }).catch((error) =>{
-      var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
+      window.location.href = "index.html"
     })
   });
 

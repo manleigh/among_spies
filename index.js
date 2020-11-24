@@ -14,10 +14,10 @@ var firebaseConfig = {
   
   firebase.auth().onAuthStateChanged(firebaseUser =>{
     if(firebaseUser){
-      console.log(firebaseUser);
+      //console.log(firebaseUser);
       setupUI(firebaseUser)
     } else{
-      console.log('not logged in');
+      //console.log('not logged in');
       setupUI()
     }
   })
@@ -27,14 +27,7 @@ var firebaseConfig = {
 
   btnSignout.addEventListener('click', e =>{
     e.preventDefault();
-    firebase.auth().signOut().then(() => {
-      console.log('user has signed out')
-    }).catch((error) =>{
-      var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-    })
+    firebase.auth().signOut();
   });
 
 

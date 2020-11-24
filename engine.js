@@ -115,7 +115,7 @@ let counter = 0;
 function playSongs() { //playSongs writes artist name, track name to respective HTML elements and plays song
     let artOrSong = Math.random()
     let song = selectedSongs[counter]
-    console.log(song)
+    //console.log(song)
     let artist = false;
     let imgSrc = song.track.album.images.find(img => img.height === 300)
     if (artOrSong < 0.5) {
@@ -168,9 +168,9 @@ function makeGuess() {
             totalRight++;
         }
     }
-    console.log(guess.toLowerCase())
-    console.log(song.track.name.toLowerCase())
-    console.log(song.track.artists[0].name.toLowerCase())
+    //console.log(guess.toLowerCase())
+    //console.log(song.track.name.toLowerCase())
+    //console.log(song.track.artists[0].name.toLowerCase())
     counter++;
     nextSong();
 }
@@ -197,11 +197,11 @@ function endGame() {
     let totalTime = t1 - t0;
     let finalScore = calcScore(totalTime)
     finalScore = Math.ceil(finalScore * 100) / 100;
-    console.log("total right is" + totalRight)
-    console.log(finalScore)
+    //("total right is" + totalRight)
+    //console.log(finalScore)
     firebase.auth().onAuthStateChanged(firebaseUser =>{
         if(firebaseUser){
-          console.log(firebaseUser);
+          //console.log(firebaseUser);
           var docRef = db.collection("users").doc(firebaseUser.email);
           docRef.get().then(function(doc) {
         if (doc.exists) {
@@ -210,33 +210,27 @@ function endGame() {
                 db.collection("users").doc(firebaseUser.email).set({
                     displayID: firebaseUser.displayName,
                     score: finalScore
-                })
-                .then(function() {
-                    console.log("Document successfully written!");
-                })
-                .catch(function(error) {
-                    console.error("Error writing document: ", error);
                 });
             }
-            console.log("score updated")
+            //console.log("score updated")
         } else {
             db.collection("users").doc(firebaseUser.email).set({
                 displayID: firebaseUser.displayName,
                 score: finalScore
             })
             .then(function() {
-                console.log("Document successfully written!");
+                //console.log("Document successfully written!");
             })
             .catch(function(error) {
-                console.error("Error writing document: ", error);
+                //console.error("Error writing document: ", error);
             });
-            console.log("Document created");
+            //console.log("Document created");
         }
         }).catch(function(error) {
-            console.log("Error getting document:", error);
+            //console.log("Error getting document:", error);
         });
         } else{
-          console.log('not logged in')
+          //console.log('not logged in')
         }
       })
     
@@ -312,3 +306,12 @@ async function retrieveTracks(endpoint) { //given endpoint URL for specific play
     const data = await result.json();
     return data.items; //returns numerous song JSON objects
 }
+
+const btnSignout = document.getElementById('signOut')
+
+  btnSignout.addEventListener('click', e =>{
+    e.preventDefault();
+    firebase.auth().signOut().then(() => {
+        window.location.href = "index.html"
+    })
+  });
