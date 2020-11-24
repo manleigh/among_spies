@@ -195,7 +195,8 @@ function nextSong() {
 function endGame() {
     t1 = performance.now();
     let totalTime = t1 - t0;
-    let finalScore = score(totalTime)
+    let finalScore = calcScore(totalTime)
+    finalScore = Math.ceil(finalScore * 100) / 100;
     console.log("total right is" + totalRight)
     console.log(finalScore)
     firebase.auth().onAuthStateChanged(firebaseUser =>{
@@ -273,8 +274,8 @@ function playAgain() {
     appendGenres()
 }
 
-function score(totalTime) {
-    let totalScore = totalRight + 200000/totalTime
+function calcScore(totalTime) {
+    let totalScore = totalRight + 30000/totalTime
     return totalScore;
 }
 
