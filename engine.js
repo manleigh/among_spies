@@ -256,6 +256,7 @@ function endGame() {
 }
 
 function stopPlaying() {
+    document.getElementById("totalRight").remove();
     document.getElementById("finalScore").remove();
     document.getElementById("replayButton").remove();
     document.getElementById("stopPlayingButton").remove();
@@ -267,6 +268,7 @@ function stopPlaying() {
 }
 
 function playAgain() {
+    document.getElementById("totalRight").remove();
     document.getElementById("finalScore").remove();
     document.getElementById("replayButton").remove();
     document.getElementById("stopPlayingButton").remove();
