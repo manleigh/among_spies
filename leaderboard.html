@@ -59,6 +59,16 @@
 
   <div>
     <h1 id="leaderboard-title" class="main-title">Leaderboard</h1>
+    <p id="lboardSearch">Looking for someone's score? Search here!</p>
+    <form autocomplete="off">
+      <div class="autocomplete" style="width:300px;">
+        <input id="myInput" type="text" name="thisUser">
+      </div>
+      <button id = "btnSearch" type='button'>Search</button> 
+    </form>
+    <table class="card-content">
+    <div id = "searchResult"></div>
+  </table>
     <table class="card-content" id="scores">
       <th>Name</th>
       <th>Score</th>
@@ -66,13 +76,13 @@
         <!-- <div class="card-content" id="scores"></div>  -->
   </div>
 
-  <form autocomplete="off">
+  <!-- <form autocomplete="off">
     <div class="autocomplete" style="width:300px;">
       <input id="myInput" type="text" name="thisUser">
     </div>
     <button id = "btnSearch" type='button'>Search</button> 
   </form>
-  <div id = "searchResult"></div>
+  <div id = "searchResult"></div> -->
 
   <script src="new_leaderboard.js"></script>
   <script src="autocomplete.js"></script>

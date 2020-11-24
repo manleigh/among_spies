@@ -48,3 +48,26 @@ input[type=submit] {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
+
+
+#searchResult {
+  /* width: 80%; */
+  width: 77%;
+  /* margin-left: 49vw; */
+  border-radius: 0.5em;
+  margin-left: 100px;
+  /* padding-left: 100px; */
+  /* justify-content: space-between; */
+  margin-top: 40px;
+  margin-bottom: 30px;
+  /* background: #bdb8f8; */
+  background-color: #12131a;
+  box-shadow: 0 0 90px #6056c9, 0 0 90px  #6056c9, 0 0 2px  #6056c9;
+}
+
+#searchResult td {
+  border-radius: 0.5em;
+  padding-left: 217px;
+  padding-right: 178px;
+  margin-left: 0px;
+}
