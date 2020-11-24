@@ -46,14 +46,20 @@ var firebaseConfig = {
               db.collection("users").doc(email).set({
                 displayID: displayname,
                 score: 0
-            })
+             }).then(()=>{
+               console.log("document created")
+               function Redirect() {
+                window.location.href = "gamepage.html";
+             }  
+             setTimeout(Redirect(), 5000)
+             })
 
               $("#notify").html('<p>Successfully Registered! You are now logged in.</p>')
-              window.location.href = "gamepage.html"
+              
               
             })
-            .catch(() => {
-
+            .catch((error) => {
+              console.log(error.message)
               $("#notify").html("<p>Invalid Sign-Up</p>")
       
       })
