@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="autcomplete.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
+  
   <title>Guessify Leaderboard</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -64,7 +66,16 @@
         <!-- <div class="card-content" id="scores"></div>  -->
   </div>
 
+  <form autocomplete="off">
+    <div class="autocomplete" style="width:300px;">
+      <input id="myInput" type="text" name="thisUser">
+    </div>
+    <button id = "btnSearch" type='button'>Search</button> 
+  </form>
+  <div id = "searchResult"></div>
+
   <script src="new_leaderboard.js"></script>
+  <script src="autocomplete.js"></script>
 
 </body>
 

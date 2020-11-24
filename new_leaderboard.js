@@ -68,7 +68,7 @@ var firebaseConfig = {
             // doc.data() is never undefined for query doc snapshots
             var username = doc.data().displayID
             var score = doc.data().score
-            console.log(username, score);
+            //console.log(username, score);
             // let output = `<h2>${username} ${score}</h2>`
             $('#scores').append(`<tr class="username"><td>${username}</td> <td>${score}</td></tr>`)
         });
