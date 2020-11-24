@@ -248,6 +248,7 @@ function endGame() {
 
     let endScreen = `
     <p id = "finalScore">Total Score: ${finalScore} </p>
+    <p id = "totalRight">You got ${totalRight}/10 correct! </p>
     <button id="replayButton" onclick="playAgain()">Play Again? </button>
     <button id="stopPlayingButton" onclick="stopPlaying()">Done Playing? </button>
     `
@@ -275,7 +276,7 @@ function playAgain() {
 }
 
 function calcScore(totalTime) {
-    let totalScore = totalRight + 30000/totalTime
+    let totalScore = 2*totalRight + 10000/totalTime
     return totalScore;
 }
 
